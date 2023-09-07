@@ -39,7 +39,7 @@ const Signup = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div id="signup" className="min-h-screen flex items-center justify-center bg-white">
       <form className="w-1/5" onSubmit={handleSubmit}>
         <div className="flex items-center justify-center">
           <Image src="/Illustration.svg" alt="logo" width={200} height={200} />

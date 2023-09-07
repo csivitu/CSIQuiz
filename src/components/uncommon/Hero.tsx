@@ -1,13 +1,12 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 
 function Hero() {
     return(
-        <div className="bg-[#102D4D] h-screen flex-col">
-            <div className="flex h-3/4 max-md:flex-col-reverse max-md:h-2/3">
-                <div className='flex flex-col gap-12 px-10 py-20 max-md:flex-row max-md:justify-center'>
+        <div className="bg-[#102D4D] h-screen flex-col max-md:h-full">
+            <div className="flex h-3/4 max-md:flex-col-reverse">
+                <div className='flex flex-col gap-12 px-10  items-center justify-center max-md:flex-row max-md:justify-center'>
                     <Link href="https://www.youtube.com/@csivitu" className="">
                         <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M29.8214 7.46454C29.8866 5.52138 29.4742 3.59276 28.6227 1.85776C28.0449 1.14584 27.243 0.665415 26.3568 0.500185C22.6913 0.157432 19.0107 0.016949 15.3306 0.0793375C11.6639 0.0141174 7.99652 0.150067 4.34389 0.48661C3.62175 0.621982 2.95345 0.971049 2.42056 1.49121C1.23494 2.618 1.10321 4.54575 0.971474 6.17484C0.780342 9.10389 0.780342 12.0429 0.971474 14.9719C1.00958 15.8888 1.14206 16.799 1.36668 17.6871C1.52552 18.3727 1.84688 19.0071 2.302 19.5334C2.83851 20.0811 3.52237 20.45 4.26485 20.5923C7.10495 20.9535 9.96663 21.1033 12.8276 21.0403C17.4384 21.1081 21.4826 21.0403 26.2646 20.6601C27.0253 20.5266 27.7284 20.1572 28.2801 19.6012C28.649 19.221 28.9244 18.7556 29.0837 18.2437C29.5549 16.7539 29.7862 15.1947 29.7688 13.6279C29.8214 12.8677 29.8214 8.27908 29.8214 7.46454ZM12.3534 14.4425V6.03908L20.1521 10.2611C17.9653 11.5101 15.0803 12.922 12.3534 14.4425Z" fill="#FEFFEA" className="youtube"/>
@@ -31,8 +30,8 @@ function Hero() {
                     </Link>
                 </div>
                 <div className="relative mx-auto mt-16">
-                <div className="absolute top-0 right-1/2 translate-x-1/2 flex-col text-white p-20 w-2/3 h-3/4 rounded-full mx-auto background max-md:h-full max-md:hidden"></div>
-                <div className="flex flex-col text-white bg-hero w-2/3 h-3/4 rounded-full mx-auto items-center justify-center max-md:justify-start">
+                <div className="absolute top-0 right-1/2 translate-x-1/2 flex-col text-white p-20 w-3/4 h-4/5 rounded-full mx-auto background max-md:h-full max-md:w-full"></div>
+                <div className="flex flex-col text-white bg-hero w-2/3 h-4/5 rounded-full mx-auto items-center justify-center max-md:justify-start max-md:h-full max-md:w-3/4 max-md:mb-10">
                     <div className="text-center text-[48px] w-full font-third tracking-wider">
                         Welcome to CSI&apos;s National Quiz 2023
                     </div>
@@ -42,7 +41,7 @@ function Hero() {
                 </div>
                 </div> 
             </div>
-            <div className="w-fit border rounded-[20px] bg-yellow-300 p-2 px-10 text-[#102D4D] font-bold m-auto font-secondary">
+            <div className="w-fit text-2xl border rounded-[20px] bg-yellow-300 p-2 px-10 text-[#102D4D] font-bold m-auto font-secondary mt-10">
             <button className="">
                 Register
             </button>

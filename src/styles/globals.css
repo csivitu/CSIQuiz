@@ -27,3 +27,7 @@ html {
 .instagram:hover{
   filter: invert(0.28) sepia(1) saturate(20) hue-rotate(259.2deg) brightness(0.69);
 }
+
+.facebook:hover{
+  fill: #1877f2
+}
