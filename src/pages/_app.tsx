@@ -1,6 +1,29 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { Merriweather, Roboto, Anton } from 'next/font/google'
+
+const anton = Anton({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--anton-font',
+})
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--roboto-font',
+})
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--merriweather-font',
+})
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <main className={`${merriweather.variable} ${roboto.variable} ${anton.variable}`}>
+      <Component {...pageProps} />
+    </main>
+  )
 }
