@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { Merriweather, Roboto, Anton } from 'next/font/google'
 
@@ -23,6 +24,9 @@ const merriweather = Merriweather({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${merriweather.variable} ${roboto.variable} ${anton.variable}`}>
+      <Head>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+      </Head>
       <Component {...pageProps} />
     </main>
   )
