@@ -1,0 +1,355 @@
+.resultWrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdf7e7;
+  }
+  .homeContainer {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .sponserWrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sponserImg {
+    width: 30%;
+  }
+  .sponserContainer {
+    width: 65%;
+  }
+  .resultContainer {
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "inter";
+  }
+  .rHeading {
+    font-size: 3rem;
+    font-family: "Inter";
+    text-align: center;
+  }
+  .rFlexCont {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .circlesContainer {
+    width: 50%;
+    height: 100%;
+  }
+  .circles {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .circle {
+    width: 10rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #105bcc;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  .circleA {
+    left: 40%;
+    top: 40%;
+    z-index: 100;
+  }
+  .circleB {
+    background-color: #01095f;
+    left: 55%;
+    top: 60%;
+    z-index: 99;
+  }
+  .rInfo {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .infoTitle {
+    background-color: #b0caf0;
+    padding: 1rem 2.5rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+  }
+  .accountExist {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  .rfoot {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .aboutContainer {
+    width: 80%;
+  }
+  .aboutMainContainer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+  }
+  .aboutContainer:nth-child(1) {
+    align-self: flex-start;
+    width: 100%;
+    line-height: 2rem;
+    font-size: 1.6rem;
+  }
+  .aboutContainer:nth-child(2) {
+    align-self: flex-end;
+    width: 100%;
+    line-height: 2rem;
+    font-size: 1.6rem;
+  }
+  .aboutHeading {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  .sponserHeading {
+    margin-top: 4rem;
+    font-size: 3rem;
+  }
+  .sponserContainer {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+  @media (max-width: 1022px) {
+    .aboutHeading {
+      font-size: 2rem;
+    }
+    .sponserHeading {
+      font-size: 2rem;
+      margin-top: 8rem;
+    }
+    .sponserContainer {
+      font-size: 1.3rem;
+    }
+    .aboutContainer:nth-child(1) {
+      font-size: 1.3rem;
+    }
+    .aboutContainer:nth-child(2) {
+      font-size: 1.3rem;
+    }
+    .headingText {
+      font-size: 3.8rem;
+    }
+    .subheadingText {
+      font-size: 3.8rem;
+      margin: 2rem 0 1.5rem 0;
+    }
+    .aboutContainer {
+      width: 80%;
+      /* text-align: justify; */
+      line-height: 1.8rem;
+      margin-top: 4.5rem;
+    }
+    .aboutHeading {
+      margin-bottom: 1.5rem;
+    }
+    .sponserContainer {
+      width: 80%;
+      line-height: 1.8rem;
+      margin-top: 1.5rem;
+      /* text-align: justify; */
+    }
+    .socialIcons {
+      margin-top: 0;
+      bottom: 28rem;
+    }
+    .resultsContainer {
+      height: 33vh;
+    }
+    .rFlexCont {
+      height: 80%;
+      flex-direction: column;
+    }
+    .circlesContainer {
+      width: 100%;
+      height: 50%;
+    }
+    .circles {
+      width: 100%;
+      height: 100%;
+    }
+    .rInfo {
+      width: 100%;
+      height: 50%;
+    }
+    .rHeading {
+      font-size: 2rem;
+    }
+    .rInfo {
+      margin-top: 5rem;
+    }
+    .circleA {
+      width: 8rem;
+      aspect-ratio: 1;
+      left: 40%;
+      top: 55%;
+      z-index: 100;
+    }
+    .circleB {
+      width: 8rem;
+      aspect-ratio: 1;
+      background-color: #01095f;
+      left: 60%;
+      top: 80%;
+      z-index: 99;
+    }
+    .resultContainer {
+      height: 60%;
+      padding: 3rem;
+    }
+    .rfoot {
+      height: 10%;
+    }
+    .infoTitle {
+      font-size: 0.9rem;
+    }
+    .aboutMainContainer {
+      gap: 5vh;
+    }
+    .aboutContainer:nth-child(1) {
+      width: 100%;
+    }
+    .aboutContainer:nth-child(2) {
+      width: 100%;
+    }
+    .aboutHeight {
+      min-height: 60vh;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .headingText {
+      font-size: 2.5rem;
+      color: white;
+    }
+    .subheadingText {
+      margin-top: 0;
+      font-size: 2.5rem;
+    }
+    .socialIcons {
+      margin-top: 0;
+      top: 68vh;
+    }
+    .aboutMainContainer {
+      width: 90%;
+    }
+    .aboutContainer {
+      width: 80%;
+      text-align: justify;
+      line-height: 1.8rem;
+      margin-top: 4.5rem;
+    }
+    .aboutHeading {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sponserContainer {
+      width: 100%;
+      line-height: 1.8rem;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      text-align: justify;
+    }
+    /* .resultWrapper {
+        width: max-content;
+      } */
+    /* .mainContainer {
+        width: 100vw;
+        overflow-x: hidden;
+      } */
+    .resultContainer {
+      height: 80%;
+    }
+    .circleA {
+      width: 5rem;
+      aspect-ratio: 1;
+      left: 35%;
+      top: 60%;
+      z-index: 100;
+    }
+    .circleB {
+      width: 5rem;
+      aspect-ratio: 1;
+      background-color: #01095f;
+      left: 65%;
+      top: 85%;
+      z-index: 99;
+    }
+    .rfoot {
+      font-size: 0.8rem;
+      padding-top: 2rem;
+    }
+    .aboutHeight {
+      min-height: 90vh;
+    }
+    .headDesc {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    .regBtn {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .nav {
+      font-size: 0.7rem;
+    }
+    .accountExist {
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+    .aboutContainer:nth-child(1) {
+      width: 100%;
+      font-size: 1.2rem;
+      /* text-align: center; */
+    }
+    .aboutContainer:nth-child(2) {
+      width: 100%;
+      font-size: 1.2rem;
+    }
+    .infoTitle {
+      padding: 0.5rem 1rem;
+    }
+    .rHeading {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-device-width: 380px) and (max-device-height: 600px) and (orientation: landscape) {
+    .landWrapper {
+      height: 100vh;
+    }
+    .resultWrapper {
+      height: 200vh;
+      padding-top: 2rem;
+    }
+    .resultContainer {
+      height: 90%;
+    }
+  }

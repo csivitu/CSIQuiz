@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import Cookies from 'js-cookie';
 import { toast } from "react-toastify";
+import { BACKEND_URL } from "../../constants";
 
 const Signup = () => {
   const router = useRouter(); // Initialize the history hook
@@ -22,7 +23,7 @@ const Signup = () => {
       password: password
     }
     try{
-      const response = await axios.post(`http://localhost:3015/register`,payload)
+      const response = await axios.post(`${BACKEND_URL}/register`,payload)
       const cookieToken = response.data.token;
       Cookies.set('token', cookieToken);
       toast.success("Successfully Registered");
