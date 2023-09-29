@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
-
+import { useRouter } from "next/navigation";
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { toast } from "react-toastify";
 const Signup = () => {
   const navigate = useRouter();
   const [email, setEmail] = useState("");
@@ -14,28 +16,27 @@ const Signup = () => {
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
-    const data = await response.json();
-    if (data.user) {
-      alert("Login Successful!");
-      localStorage.setItem("token", data.user);
-      navigate.push("/");
-    } else if (data.status === "passerror") {
-      alert("Wrong Password Try Again");
-    } else {
-      alert("You need to register first.");
-      navigate.push("/signup");
+    if(!email || !password){
+      toast.error("Please enter all the fields")
+      return
     }
-    console.log(data);
+    const payload = {
+      email: email,
+      password: password
+    }
+    try{
+      const response = await axios.post(`http://localhost:3015/login`,payload)
+      const cookieToken = response.data.token;
+      Cookies.set('token', cookieToken);
+      toast.success("Successfully Logged In");
+      navigate.push("/");
+      return;
+    }
+    catch(err:any){
+      toast.error(err.response.data.error)
+      return;
+    }
+    
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
