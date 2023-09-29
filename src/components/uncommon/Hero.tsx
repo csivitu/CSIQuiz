@@ -1,8 +1,23 @@
-import React from "react";
-import Link from "next/link";
+'use client'
 
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Cookie from 'js-cookie';
+import { toast } from "react-toastify";
 
 function Hero() {
+    const [isSignedin, setIsSignedIn] = useState(false);
+
+    useEffect(() => {
+        if(Cookie.get('token')){
+            setIsSignedIn(true);
+        }
+    }, []);
+
+    const handleQuiz = () => {
+        toast.error("Quiz has not yet started")
+    }
+
     return(
         <div className="bg-[#102D4D] h-screen flex-col max-md:h-full">
             <div className="flex h-3/4 max-md:flex-col-reverse">
@@ -42,9 +57,16 @@ function Hero() {
                 </div> 
             </div>
             <div className="w-fit text-2xl border rounded-[20px] bg-yellow-300 p-2 px-10 text-[#102D4D] font-bold m-auto font-secondary mt-10">
-            <Link href = "/signup" >
-                Register
-            </Link>
+            {!isSignedin?(
+             <Link href = "/signup" >
+                 Register
+             </Link>
+            ):(
+                <button onClick = {handleQuiz}>
+                    Give quiz
+                </button>
+            )}
+           
             </div>
         </div>
     )

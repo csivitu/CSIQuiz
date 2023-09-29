@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { toast } from "react-toastify";
+import { BACKEND_URL } from "@/constants";
 const Signup = () => {
   const navigate = useRouter();
   const [email, setEmail] = useState("");
@@ -25,7 +26,7 @@ const Signup = () => {
       password: password
     }
     try{
-      const response = await axios.post(`http://localhost:3015/login`,payload)
+      const response = await axios.post(`${BACKEND_URL}/login`,payload)
       const cookieToken = response.data.token;
       Cookies.set('token', cookieToken);
       toast.success("Successfully Logged In");
