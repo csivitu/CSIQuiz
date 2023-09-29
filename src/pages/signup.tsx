@@ -1,40 +1,38 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import Cookies from 'js-cookie';
+import { toast } from "react-toastify";
 
 const Signup = () => {
-  const history = useRouter(); // Initialize the history hook
-  const [firstname,setFirstname] = useState('')
-  const [lastname,setLastname] = useState('')
+  const router = useRouter(); // Initialize the history hook
   const [email,setEmail] = useState('')
-  const [contact,setContact] = useState('')
   const [password,setPassword] = useState('')
-
+  const [repeatPassword,setRepeatPassword] = useState('')
 
   const handleSubmit =  async (e: { preventDefault: () => void; })=>{
     e.preventDefault()
-    const response = await fetch('http://localhost:5000/api/register',{
-      method : 'POST',
-      headers : {
-        'Content-Type' : 'application/json',
-      },
-      body : JSON.stringify({
-        firstname,
-        lastname,
-        email,
-        contact,
-        password,
-      })
-    })
-    const data = await response.json()
-    if(data.status==='ok'){
-      alert('You have registered successfully and can login now')
-      history.push('/login')
-    }else{
-      alert('You are already registered. Please login')
-      history.push('/login')
+    if(password !== repeatPassword){
+      toast.error("Passwords do not match")
+      return
     }
-    console.log(data)
+    const payload = {
+      email: email,
+      password: password
+    }
+    try{
+      const response = await axios.post(`http://localhost:3015/register`,payload)
+      const cookieToken = response.data.token;
+      Cookies.set('token', cookieToken);
+      toast.success("Successfully Registered");
+      router.push("/");
+      return;
+    }
+    catch(err:any){
+      toast.error(err.response.data.error)
+
+    }
 
   }
 
@@ -94,6 +92,7 @@ const Signup = () => {
             className="shadow-sm  border border-black text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             placeholder="*******"
             required
+            onChange = {(e) => setRepeatPassword(e.target.value)}
           />
         </div>
 

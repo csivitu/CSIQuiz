@@ -42,9 +42,9 @@ function Hero() {
                 </div> 
             </div>
             <div className="w-fit text-2xl border rounded-[20px] bg-yellow-300 p-2 px-10 text-[#102D4D] font-bold m-auto font-secondary mt-10">
-            <button className="">
+            <Link href = "/signup" >
                 Register
-            </button>
+            </Link>
             </div>
         </div>
     )

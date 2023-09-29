@@ -2,6 +2,8 @@ import '@/styles/globals.css'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { Merriweather, Roboto, Anton } from 'next/font/google'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const anton = Anton({
   subsets: ['latin'],
@@ -27,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="shortcut icon" href="images/favicon.ico" />
       </Head>
+      <ToastContainer />
       <Component {...pageProps} />
     </main>
   )
