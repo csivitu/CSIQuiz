@@ -6,8 +6,8 @@ import Countdown from "@/components/uncommon/countdown";
 import axios from 'axios';
 import { useRouter } from 'next/router'
 import postHandler from "@/handlers/postHandler";
-import { BACKEND_URL } from "@/constants";
 import { toast } from "react-toastify";
+import { BACKEND_URL } from "../../constants";
 
 const round  = "firstRoundScore";
 

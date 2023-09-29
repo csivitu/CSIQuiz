@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import Cookies from 'js-cookie';
 import { toast } from "react-toastify";
-import { BACKEND_URL } from "@/constants";
+import { BACKEND_URL } from "../../constants";
 
 const Signup = () => {
   const router = useRouter(); // Initialize the history hook

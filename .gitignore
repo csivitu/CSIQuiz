@@ -38,4 +38,4 @@ next-env.d.ts
 
 .env
 
-src/constants.ts
+constants.ts

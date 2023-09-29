@@ -5,7 +5,7 @@ import "tailwindcss/tailwind.css";
 import styles from "../styles/landing.module.css";
 import {useState, useEffect} from 'react';
 import getHandler from "@/handlers/getHandler";
-import { BACKEND_URL } from "@/constants";
+import { BACKEND_URL } from "../../constants";
 
 
 export default function ResultsNew() {
