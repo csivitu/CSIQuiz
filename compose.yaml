@@ -1,6 +1,6 @@
 version: "3.0"
 services:
-  forkthis-frontend:
+  quiz-frontend:
     build: .
     ports:
-      - "3000:3000"
+      - "3010:3010"
