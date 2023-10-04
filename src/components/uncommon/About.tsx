@@ -20,13 +20,11 @@ const About = () => {
                 About the Quiz
               </h1>
               <p className="mb-8 leading-relaxed text-white font-medium font-secondary text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Talent search for Tech Savy
+
+CSI Vellore in association with Chennai, Trivandrum, Kancheepuram, Trichy, Coimbatore, Salem, Cochin and Sivakasi is thrilled to organize our second National Quiz. Are you ready to take on a challenge and test your skills? The event aims to encourage students to take quizzing as a passion and to brush up their knowledge in computer science. 
+•	Eligibility: The competition is open for all graduates/postgraduates
+•	Participation: Individual participation
               </p>
             </div>
           </div>
@@ -37,13 +35,8 @@ const About = () => {
               About CSI
             </h1>
             <p className="mb-8 leading-relaxed text-white font-medium font-secondary text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Computer Society of India (CSI) is the largest association of IT professionals in India. CSI is a non-profit organization established in 1965 and its members are committed to the advancement of theory and practice of Computer Engineering and Technology Systems. The Mission of CSI is to facilitate research, knowledge sharing, learning and career enhancement for all categories of IT professionals, while simultaneously inspiring and nurturing new entrants into the industry and helping them to integrate into the IT community
+
             </p>
           </div>
         </div>
