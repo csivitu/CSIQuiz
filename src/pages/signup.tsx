@@ -4,33 +4,37 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import Cookies from 'js-cookie';
 import { toast } from "react-toastify";
-import { BACKEND_URL } from "../../constants";
 
 const Signup = () => {
   const router = useRouter(); // Initialize the history hook
-  const [email,setEmail] = useState('')
-  const [password,setPassword] = useState('')
-  const [repeatPassword,setRepeatPassword] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [repeatPassword, setRepeatPassword] = useState('')
+  const [name, setName] = useState('')
+  const [phoneNum, setPhoneNum] = useState('')
 
-  const handleSubmit =  async (e: { preventDefault: () => void; })=>{
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
-    if(password !== repeatPassword){
+    if (password !== repeatPassword) {
       toast.error("Passwords do not match")
       return
     }
     const payload = {
       email: email,
-      password: password
+      password: password,
+      name: name,
+      phone: phoneNum
     }
-    try{
-      const response = await axios.post(`${BACKEND_URL}/register`,payload)
+    console.log(payload)
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/register`, payload)
       const cookieToken = response.data.token;
       Cookies.set('token', cookieToken);
       toast.success("Successfully Registered");
       router.push("/");
       return;
     }
-    catch(err:any){
+    catch (err: any) {
       toast.error(err.response.data.error)
 
     }
@@ -38,8 +42,8 @@ const Signup = () => {
   }
 
   return (
-    <div id="signup" className="min-h-screen flex items-center justify-center bg-white">
-      <form className="w-1/5" onSubmit={handleSubmit}>
+    <div id="signup" className="min-h-screen flex items-center justify-center bg-white py-10">
+      <form className="w-[80%] md:w-1/5 flex flex-col justify-center" onSubmit={handleSubmit}>
         <div className="flex items-center justify-center">
           <Image src="/Illustration.svg" alt="logo" width={200} height={200} />
         </div>
@@ -62,6 +66,38 @@ const Signup = () => {
             placeholder="Enter Your Email"
             required
             onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="mb-6">
+          <label
+            htmlFor="name"
+            className="block mb-2 text-lg font-medium text-gray-900 dark:text-black"
+          >
+            Full Name
+          </label>
+          <input
+            type="name"
+            id="name"
+            className="shadow-sm  border border-black text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="Enter Your name"
+            required
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="mb-6">
+          <label
+            htmlFor="Name"
+            className="block mb-2 text-lg font-medium text-gray-900 dark:text-black"
+          >
+            Phone number
+          </label>
+          <input
+            type="phone"
+            id="phone"
+            className="shadow-sm  border border-black text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="Enter Your phone number"
+            required
+            onChange={(e) => setPhoneNum(e.target.value)}
           />
         </div>
         <div className="mb-6">
@@ -93,7 +129,7 @@ const Signup = () => {
             className="shadow-sm  border border-black text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             placeholder="*******"
             required
-            onChange = {(e) => setRepeatPassword(e.target.value)}
+            onChange={(e) => setRepeatPassword(e.target.value)}
           />
         </div>
 

@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { toast } from "react-toastify";
-import { BACKEND_URL } from "../../constants";
 const Signup = () => {
   const navigate = useRouter();
   const [email, setEmail] = useState("");
@@ -26,7 +25,7 @@ const Signup = () => {
       password: password
     }
     try{
-      const response = await axios.post(`${BACKEND_URL}/login`,payload)
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/login`,payload)
       const cookieToken = response.data.token;
       Cookies.set('token', cookieToken);
       toast.success("Successfully Logged In");
@@ -41,7 +40,7 @@ const Signup = () => {
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
-      <form className="w-1/5"
+      <form className="md:w-1/5 w-[80%] flex flex-col justify-center"
       onSubmit={handleSubmit}
       >
         <div className="flex items-center justify-center">
