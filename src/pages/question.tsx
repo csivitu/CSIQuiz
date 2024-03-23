@@ -7,7 +7,6 @@ import axios from 'axios';
 import { useRouter } from 'next/router'
 import postHandler from "@/handlers/postHandler";
 import { toast } from "react-toastify";
-import { BACKEND_URL } from "../../constants";
 
 const round  = "firstRoundScore";
 
@@ -34,14 +33,14 @@ export default function Question() {
     setSelectedOption(option);
   };
   const getQuestion = async () => {
-    const response = await axios.get(`${BACKEND_URL}/question/find`)
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/question/find`)
     setQuestion(response.data.response)
   }
 
   useEffect(() => {
     if(isDone){
       const Done = async () => {
-        const response = await postHandler(`${BACKEND_URL}/leaderboard/add`, {score: score, round: round}, true)
+        const response = await postHandler(`${process.env.NEXT_PUBLIC_BACKEND_URL}/leaderboard/add`, {score: score, round: round}, true)
         router.push('/results')
       }
       Done();
@@ -52,7 +51,7 @@ export default function Question() {
   const skipQuestion = async () => {
     setSelectedOption('')
     if(questionNum == 10){
-      const response = await postHandler(`${BACKEND_URL}/result`, {score: score}, true)
+      const response = await postHandler(`${process.env.NEXT_PUBLIC_BACKEND_URL}/result`, {score: score}, true)
       router.push('/results')
     }
     setQuestionNum(questionNum+1)
@@ -69,12 +68,12 @@ export default function Question() {
       id: question.id,
       answer: selectedOption
     }
-    const response = await axios.post(`${BACKEND_URL}/question/verify `, payload)
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/question/verify `, payload)
     if(response.data.answer){
       setScore(score+1)
     }
     if(questionNum == 10){
-      const response = await postHandler(`${BACKEND_URL}/leaderboard/add`, {score: score, round: round}, true)
+      const response = await postHandler(`${process.env.NEXT_PUBLIC_BACKEND_URL}/leaderboard/add`, {score: score, round: round}, true)
       console.log(score)
       router.push('/results')
     } 
