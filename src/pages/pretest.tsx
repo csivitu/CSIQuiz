@@ -1,10 +1,20 @@
-
-import React from "react";
+'use client'
+import React, { useEffect } from "react";
 import "tailwindcss/tailwind.css";
 import styles from "./../styles/pretest.module.css";
 import Link from "next/link";
+import Cookie from 'js-cookie';
+import { useRouter } from "next/navigation";
 
 export default function Pretest() {
+
+  const router = useRouter()
+
+  useEffect(() => {
+    if(!Cookie.get('token')){
+        router.push("/login")
+    }
+}, []);
   return (
     <>
       <div className={styles.ptWrapper}>

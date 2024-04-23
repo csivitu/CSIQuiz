@@ -3,24 +3,31 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
 import styles from "../styles/landing.module.css";
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import getHandler from "@/handlers/getHandler";
-
+import Cookie from 'js-cookie'
+import { useRouter } from "next/navigation";
 
 export default function ResultsNew() {
   const [score, setScore] = useState(0);
   const [total, setTotal] = useState(0);
   const [percentage, setPercentage] = useState(0);
+  const router = useRouter();
 
   useEffect(() => {
+    
     const getStuff = async () => {
+      if(!Cookie.get('token')){
+        router.push("/login")
+        return;
+      }
       const response = await getHandler(`${process.env.NEXT_PUBLIC_BACKEND_URL}/leaderboard/data`, true);
       setScore(response.data.data.score);
       setTotal(response.data.data.total);
       setPercentage(response.data.data.percentage)
     }
     getStuff();
-  },[])
+  }, [])
 
   return (
     <>
