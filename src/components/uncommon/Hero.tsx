@@ -4,9 +4,11 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Cookie from 'js-cookie';
 import { toast } from "react-toastify";
+import {useRouter } from 'next/navigation';
 
 function Hero() {
     const [isSignedin, setIsSignedIn] = useState(false);
+    const router = useRouter()
 
     useEffect(() => {
         if(Cookie.get('token')){
@@ -15,7 +17,8 @@ function Hero() {
     }, []);
 
     const handleQuiz = () => {
-        toast.error("Quiz has not yet started")
+        router.push('/pretest')
+        
     }
 
     return(
