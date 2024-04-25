@@ -17,6 +17,8 @@ function Hero() {
     }, []);
 
     const handleQuiz = () => {
+        toast.info("Quiz has not started yet")
+        return;
         router.push('/pretest')
         
     }
