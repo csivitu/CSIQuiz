@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Cookie from 'js-cookie';
-import { toast } from "react-toastify";
 import {useRouter } from 'next/navigation';
+import { toast } from "react-toastify";
 
 function Hero() {
     const [isSignedin, setIsSignedIn] = useState(false);
@@ -17,9 +17,9 @@ function Hero() {
     }, []);
 
     const handleQuiz = () => {
-        // toast.info("Quiz has not started yet")
-        // return;
-        router.push('/pretest')
+        toast.info("Round 2 has not started yet")
+        return;
+        // router.push('/pretest')
         
     }
 
