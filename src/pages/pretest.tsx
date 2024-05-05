@@ -31,14 +31,14 @@ export default function Pretest() {
             <h2 className={styles.header}>Test Date and Timing:</h2>
             <ul>
               <li>
-                Test Date: <strong>22 Aug, 2023</strong>
+                Test Date: <strong>23 May, 20243</strong>
               </li>
-              <li>
+              {/* <li>
                 Test Start Time: <strong>1:00 P.M. IST</strong>
               </li>
               <li>
                 Test End Time: <strong>2:00 P.M. IST</strong>
-              </li>
+              </li> */}
             </ul>
             <p className={styles.subHeading}>
               Before you begin the test, please take a moment to review these
