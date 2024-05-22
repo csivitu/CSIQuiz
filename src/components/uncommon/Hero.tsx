@@ -53,7 +53,7 @@ function Hero() {
                 <div className="absolute top-0 right-1/2 translate-x-1/2 flex-col text-white p-20 w-3/4 h-4/5 rounded-full mx-auto background max-md:h-full max-md:w-full"></div>
                 <div className="flex flex-col text-white bg-hero w-2/3 h-4/5 rounded-full mx-auto items-center justify-center max-md:justify-start max-md:h-full max-md:w-3/4 max-md:mb-10">
                     <div className="text-center text-[48px] w-full font-third tracking-wider">
-                        Welcome to CSI&apos;s National Quiz 2023
+                        Welcome to CSI&apos;s National Quiz 2024
                     </div>
                     <div className="text-center text-md text-[25px] w-full text-md pt-3 font-primary">
                         CSI&apos;s annual quiz is back!
