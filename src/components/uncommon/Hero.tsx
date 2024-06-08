@@ -17,9 +17,9 @@ function Hero() {
     }, []);
 
     const handleQuiz = () => {
-        toast.info("Round 2 has not started yet")
-        return;
-        // router.push('/pretest')
+        // toast.info("Round 2 has not started yet")
+        // return;
+        router.push('/pretest')
         
     }
 

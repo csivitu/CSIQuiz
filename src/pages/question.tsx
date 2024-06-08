@@ -9,7 +9,7 @@ import postHandler from "@/handlers/postHandler";
 import { toast } from "react-toastify";
 import Cookie from 'js-cookie';
 
-const round = "firstRoundScore";
+const round = "secondRoundScore";
 
 interface Question {
   question: string;
