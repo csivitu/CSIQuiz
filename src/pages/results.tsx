@@ -48,7 +48,7 @@ export default function ResultsNew() {
               </div>
             </div>
             <div className={styles.rInfo}>
-              <span className={styles.infoTitle}>Your Score is {score}/10</span>
+              <span className={styles.infoTitle}>Your Score is {score}/25</span>
               <span className={styles.infoTitle}>
                 You scored better than {percentage}% participants who attempted the quiz
               </span>

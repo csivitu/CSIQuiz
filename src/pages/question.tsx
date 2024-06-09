@@ -77,7 +77,7 @@ export default function Question() {
 
   const skipQuestion = async () => {
     setSelectedOption('')
-    if (questionNum == 10) {
+    if (questionNum == 20) {
       const response = await postHandler(`${process.env.NEXT_PUBLIC_BACKEND_URL}/result`, { score: score }, true)
       router.push('/results')
     }
@@ -99,7 +99,7 @@ export default function Question() {
     if (response.data.answer) {
       setScore(score + 1)
     }
-    if (questionNum == 10) {
+    if (questionNum == 20) {
       const response = await postHandler(`${process.env.NEXT_PUBLIC_BACKEND_URL}/leaderboard/add`, { score: score, round: round }, true)
       router.push('/results')
     }
@@ -116,7 +116,7 @@ export default function Question() {
     <>
       <div className="bg-paleyellow flex flex-shrink-0 items-center justify-center  min-h-screen">
         <div className="bg-white w-[80%] h-fit flex flex-col justify-evenly items-center p-4">
-          <div className="status text-blueish mt-4 mb-4">Question {questionNum}/10</div>
+          <div className="status text-blueish mt-4 mb-4">Question {questionNum}/25</div>
           <div>
             <Countdown setIsDone={setIsDone} />
           </div>

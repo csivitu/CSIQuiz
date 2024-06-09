@@ -9,7 +9,7 @@ export default function Countdown({setIsDone}:any) {
     <>
     <CountdownCircleTimer
     isPlaying
-    duration={100}
+    duration={750}
     colors={'#102D4D'}
     size={100}
     onComplete={() => {
